@@ -1,0 +1,38 @@
+{
+  "name": "@studio-saelix/sencho-mcp",
+  "version": "0.1.0",
+  "description": "Read-only Model Context Protocol server for Sencho",
+  "license": "AGPL-3.0-only",
+  "type": "module",
+  "bin": {
+    "sencho-mcp": "dist/index.js"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src test",
+    "test": "vitest run",
+    "test:e2e": "vitest run test/e2e.test.ts",
+    "start": "node dist/index.js",
+    "pretest": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "^2.4.0",
+    "zod": "^4.2.0"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/client": "^2.4.0",
+    "@types/node": "^24.0.0",
+    "eslint": "^9.0.0",
+    "typescript": "^5.9.0",
+    "typescript-eslint": "^8.0.0",
+    "vitest": "^5.0.0"
+  }
+}
