@@ -120,7 +120,9 @@ npm run build
 ```
 
 `npm run test:e2e` runs the adapter against a real Sencho container and needs Docker plus
-`SENCHO_IMAGE` pointing at an image that includes the observation endpoints.
+`SENCHO_IMAGE` pointing at an image that includes the observation endpoints. It publishes
+the container on a free host port and mounts the host's Docker socket, because the stack
+reads come from the engine the node manages.
 
 ## License
 
